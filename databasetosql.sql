@@ -151,8 +151,12 @@ ORDER BY landlord;
 SELECT
     COUNT(DISTINCT c.property) AS countingg,
     r.status
-FROM db_company.db_company_21052024 AS c
-INNER JOIN register_properties.register_properties21052024 AS r
-ON c.property = r.property
-GROUP BY r.status;
+FROM 
+	db_company.db_company_21052024 AS c
+INNER JOIN 
+	register_properties.register_properties21052024 AS r
+ON 
+	c.property = r.property
+GROUP BY 
+	r.status;
 
