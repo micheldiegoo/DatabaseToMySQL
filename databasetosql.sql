@@ -54,6 +54,7 @@ WHERE
     SELECT 
     Property,
     COUNT(DISTINCT concatenated_column) AS distinct_count
+    
 FROM (
     SELECT 
         Property, 
@@ -62,7 +63,9 @@ FROM (
         dataleevingl.database_leevingl21052024
     WHERE 
         group_room NOT IN ('Restaurant', 'School') 
-        AND group_room IS NOT NULL
+        AND group_room IS NOT NULL AND
+        Property <> 'Erin' and Landlord in ('BeLettings', 'Neil')
+		and vacancy_status <> 'Blocked'
 ) AS subquery
 GROUP BY 
     Property;
